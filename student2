@@ -1,0 +1,24 @@
+class student:
+    def getstudent(self):
+        self.name=input("Enter your name:")
+        self.roll=input("Enter your roll:")
+        self.test=int(input("Enter your test mark:"))
+class literary_student(student):
+    def getliterary_student(self):
+        self.literary=int(input("Enter your literary mark:"))
+    def total_mark(self):
+        pass
+class sports_student(student):
+    def getsports_student(self):
+        self.sports=int(input("Enter your sports mark:"))
+    def total_mark(self):
+        pass
+class lit_sport_student(literary_student,sports_student):
+    def total_mark(self):
+        tot=self.test+self.literary+self.sports
+        print("Total mark:",tot)
+s=lit_sport_student()
+s.getstudent()
+s.getliterary_student()
+s.getsports_student()
+s.total_mark()
