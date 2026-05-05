@@ -1,0 +1,36 @@
+class employee:
+    def getemp(self):
+        self.id=input("enter your employee id")
+        self.name=input("enter your employee name")
+        self.salary=int(input("enter your employee salary"))
+        self.percentage=int(input("enter your bonus percentage%"))
+    def calculate_bonus(self):
+        self.bonus=(self.salary+self.percentage)/100
+        print("bonus",self.bonus)
+class manager(employee):
+    def managerdetails(self):
+        self.dept=input("enter your department")
+        self.teamsize=input("enter your team size")
+        self.allowance=input("enter your allowance")
+    def print_managerdetails(self):
+        print("name:",self.name)
+        self.calculate_bonus()
+class developer(employee):
+    def developerdetails(self):
+        self.project=input("enter your project")
+        self.experience=input("enter your experience")
+    def print_developerdetails(self):
+        print("name:",self.name)
+        self.calculate_bonus()
+m=manager()
+print("*****enter manager details*****")
+m.getemp()
+m.managerdetails()
+print("****MANAGER*****")
+m.print_managerdetails()
+d=developer()
+print("********enter developer details********")
+d.getemp()
+d.developerdetails()
+print("****DEVELOPER*****")
+d.print_developerdetails()
