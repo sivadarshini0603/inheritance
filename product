@@ -1,0 +1,42 @@
+class product:
+    def getdetails(self):
+        self.id=input("enter your product id")
+        self.name=input("enter your product name")
+        self.price=input("enter your product price")
+    def add_to_cart(self):
+        print(self.name,"added to cart")
+    def display(self):
+        print("id:",self.id)
+        print("name:",self.name)
+        print("price:",self.price)
+class electronics(product):
+    def getelectronicdetails(self):
+        self.brand=input("enter brand")
+        self.warranty=input("enter warranty")
+    def display(self):
+        super().display()
+        print("brand:",self.brand)
+        print("warranty:",self.warranty)
+class clothing(product):
+    def getclothdetails(self):
+        self.type=input("enter type")
+        self.size=input("enter size")
+        self.color=input("enter color")
+    def display(self):
+        super().display()
+        print("type:",self.type)
+        print("size:",self.size)
+        print("color:",self.color)
+e=electronics()
+print("******ENTER YOUR ELECTRONIC DETAILS*******")
+e.getdetails()
+e.getelectronicdetails()
+c=clothing()
+print("******ENTER YOUR CLOTH DETAILS********")
+c.getdetails()
+c.getclothdetails()
+e.add_to_cart()
+c.add_to_cart()
+print("######CART DETAILS#######")
+e.display()
+c.display()
